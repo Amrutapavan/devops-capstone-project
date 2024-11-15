@@ -175,3 +175,7 @@ class TestAccount(unittest.TestCase):
         """It should not Deserialize an account with a TypeError"""
         account = Account()
         self.assertRaises(DataValidationError, account.deserialize, [])
+
+    def test_get_account_list(self):
+        """It is test"""
+        self.assertEqual(new_account.date_joined, account.date_joined)
