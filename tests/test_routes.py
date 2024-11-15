@@ -12,6 +12,7 @@ from tests.factories import AccountFactory
 from service.common import status  # HTTP Status Codes
 from service.models import db, Account, init_db
 from service.routes import app
+from service import talisman
 
 DATABASE_URI = os.getenv(
     "DATABASE_URI", "postgresql://postgres:postgres@localhost:5432/postgres"
@@ -49,6 +50,12 @@ class TestAccountService(TestCase):
     def tearDown(self):
         """Runs once after each test case"""
         db.session.remove()
+
+  @classmethod
+  def setUpClass(cls):
+      """Run once before all tests"""
+      { other lines of code here ... }
+      talisman.force_https = False
 
     ######################################################################
     #  H E L P E R   M E T H O D S
