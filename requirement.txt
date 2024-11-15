@@ -1,1 +1,2 @@
 Flask-Talisman
+Flask-Cors
